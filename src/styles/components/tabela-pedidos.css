@@ -1,0 +1,44 @@
+.tabela-pedidos-name-col {
+  width: 25%;
+  min-width: 16rem;
+}
+
+.tabela-pedidos-num-col {
+  width: 12%;
+  min-width: 8rem;
+}
+
+.tabela-pedidos-status-col {
+  width: 12%;
+  min-width: 8rem;
+}
+
+.tabela-pedidos-time-col {
+  width: 6%;
+  min-width: 3rem;
+}
+
+.tabela-pedidos-itens-col {
+  width: 1fr;
+  padding: 0 0.3rem;
+}
+
+.tabela-row {
+  display: inline;
+  flex: 1;
+  width: 100%;
+  font-weight: bold;
+  gap: 0px;
+}
+
+.hader-shadow {
+  box-shadow: 0px 2px 1px;
+}
+
+.table-iner-shadow {
+  box-shadow: inset 0 0 6px rgb(0, 0, 0, 0.24);
+}
+
+.tabela-body {
+  max-height: 66vh;
+}
