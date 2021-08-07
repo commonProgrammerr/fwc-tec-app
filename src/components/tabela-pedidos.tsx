@@ -1,16 +1,17 @@
 import React from "react"
 
 import { FaClock } from 'react-icons/fa'
-import PedidoItem from "./pedido-item/index";
+import PedidoItem, { PedidoItemProps } from "./pedido-item/index";
 import { useScroll } from "react-use";
 
 import '../styles/components/tabela-pedidos.css'
 
 interface TabelaDePedidosProps {
   className?: string
+  itens?: PedidoItemProps[]
 }
 
-function TabelaDePedidos({ className }: TabelaDePedidosProps) {
+function TabelaDePedidos({ className, itens }: TabelaDePedidosProps) {
   const scrollRef = React.useRef(null);
   const { y: scrollPosition } = useScroll(scrollRef);
 
@@ -29,27 +30,7 @@ function TabelaDePedidos({ className }: TabelaDePedidosProps) {
           </tr>
         </thead>
         <tbody ref={scrollRef} className={`overflow-y-scroll rounded w-full p-2 tabela-body ${scrollPosition > 2 && 'table-iner-shadow' }`} >
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="EN_ANDAMENTO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="PRONTO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="AGUARDADANDO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="ENTREGUE" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="EN_ANDAMENTO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="PRONTO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="AGUARDADANDO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="ENTREGUE" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="EN_ANDAMENTO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="PRONTO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="AGUARDADANDO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="ENTREGUE" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="EN_ANDAMENTO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="PRONTO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="AGUARDADANDO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="ENTREGUE" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="EN_ANDAMENTO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="PRONTO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="AGUARDADANDO" />
-          <PedidoItem nomeCliente="Vitor Araujo" horaDoPedido="22:23" numeroPedido={391390} statusPedido="ENTREGUE" />
-
+          {itens?.map(item => <PedidoItem {...item}/>)}
         </tbody>
       </table>
     </>
