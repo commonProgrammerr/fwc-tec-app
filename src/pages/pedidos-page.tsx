@@ -37,7 +37,7 @@ function PedidoPage() {
       {
         pedidos.loading
           ? <p className={warnsClassNames} > Carregando...</p>
-          : true
+          : pedidos.error
             ? <p className={warnsClassNames} >
                 Algo deu errado <MdError className="ml-2 mt-1" />
               </p >
@@ -66,7 +66,7 @@ async function getPedidos(): Promise<PedidoItemProps[]> {
     {
       clientInfos: {
         nome: 'Alessandra Maria Nina Viana',
-        adress: 'Rua Alberto Stein, s\/n, 908, Blumenau - 89036-900',
+        adress: 'Rua Alberto Stein, s/n, 908, Blumenau - 89036-900',
         telefone: '(47) 98137-1127'
       },
       horaDoPedido: '12:13',
