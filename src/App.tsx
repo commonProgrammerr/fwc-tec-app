@@ -6,7 +6,7 @@ import { Routes } from './routes';
 function App() {
   return (
     <>
-      <ToastProvider placement="bottom-center">
+      <ToastProvider placement="top-center">
         <Routes />
       </ToastProvider>
     </>

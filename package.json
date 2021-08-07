@@ -24,6 +24,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "server": "json-server --watch ./src/services/db.json",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

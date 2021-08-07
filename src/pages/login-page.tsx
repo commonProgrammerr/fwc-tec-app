@@ -11,7 +11,7 @@ function LoginPage() {
     <div className="h-screen w-screen flex items-center justify-center bg-indigo-300">
       <form className="flex flex-col pt-10 p-6 bg-white w-1/4 rounded shadow-md" onSubmit={() => goTo('/pedidos')} >
         <div className="self-center w-full flex flex-col items-center">
-          <img src={restaurantIcon} className="w-20" />
+          <img src={restaurantIcon} alt="restaurant" className="w-20" />
           <span className="text-gray-600 text-2xl font-semibold">Login</span>
         </div>
 
