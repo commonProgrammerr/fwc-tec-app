@@ -1,6 +1,7 @@
 {
   "pedido": [
     {
+      "id": 1,
       "clientInfos": {
         "nome": "Iago Thales Ferreira",
         "adress": "Rua Palmeirais, 479, Campo Grande - 79034-500",
@@ -8,9 +9,28 @@
       },
       "horaDoPedido": "12:13",
       "numeroPedido": 61,
-      "statusPedido": "AGUARDADANDO"
+      "statusPedido": "EN_ANDAMENTO",
+      "produtos": [
+        {
+          "nome": "X-burguer",
+          "quantidade": 1
+        },
+        {
+          "nome": "Sopa",
+          "quantidade": 1
+        },
+        {
+          "nome": "A moda da casa",
+          "quantidade": 1
+        },
+        {
+          "nome": "Salada finess",
+          "quantidade": 1
+        }
+      ]
     },
     {
+      "id": 2,
       "clientInfos": {
         "nome": "Alessandra Maria Nina Viana",
         "adress": "Rua Alberto Stein, s/n, 908, Blumenau - 89036-900",
@@ -18,9 +38,24 @@
       },
       "horaDoPedido": "12:13",
       "numeroPedido": 67,
-      "statusPedido": "ENTREGUE"
+      "statusPedido": "ENTREGUE",
+      "produtos": [
+        {
+          "nome": "X-burguer",
+          "quantidade": 1
+        },
+        {
+          "nome": "Fanta uva",
+          "quantidade": 1
+        },
+        {
+          "nome": "Batata frita",
+          "quantidade": 1
+        }
+      ]
     },
     {
+      "id": 3,
       "clientInfos": {
         "nome": "Vicente Daniel Carlos Eduardo Aparício",
         "adress": "Rua C, 151, Porto Alegre - 91150-135",
@@ -28,9 +63,10 @@
       },
       "horaDoPedido": "12:13",
       "numeroPedido": 96,
-      "statusPedido": "EN_ANDAMENTO"
+      "statusPedido": "AGUARDADANDO"
     },
     {
+      "id": 4,
       "clientInfos": {
         "nome": "Renan Cláudio Mendes",
         "adress": "Rua Paratinga, 720, Natal - 59120-140",
@@ -38,7 +74,21 @@
       },
       "horaDoPedido": "12:13",
       "numeroPedido": 50,
-      "statusPedido": "PRONTO"
+      "statusPedido": "PRONTO",
+      "produtos": [
+        {
+          "nome": "Cachorro quente",
+          "quantidade": 1
+        },
+        {
+          "nome": "File de peixe",
+          "quantidade": 2
+        },
+        {
+          "nome": "Coca Cola",
+          "quantidade": 3
+        }
+      ]
     }
   ]
 }

@@ -24,11 +24,6 @@ td.tabela-pedidos-status-col {
   min-width: 3rem;
 }
 
-.tabela-pedidos-itens-col ul {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 1fr 1fr;
-}
 .tabela-pedidos-itens-col {
   width: 1fr;
   padding: 0 0.3rem;

@@ -1,6 +1,7 @@
 import '../../styles/components/pedido-item.css'
 import ClientCell from './client-cell';
-import StateCell from './status-cell';
+import ProdutosCell from './produtos-cell';
+import StatusCell from './status-cell';
 
 export enum PedidoStatus {
   AGUARDADANDO,
@@ -36,7 +37,7 @@ function PedidoItem({
 
   return (
     <tr className={`w-full tabela-pedidos-itens ${className}`} >
-      
+
       {/* Hora do pedido */}
       <td className="text-center tabela-pedidos-time-col">
         <span className="w-full">
@@ -59,16 +60,10 @@ function PedidoItem({
       />
 
       {/*  Items pedidos */}
-      <td className="text-gray-600 tabela-pedidos-itens-col">
-        <ul className="px-3 pb-1">
-          <li>X-Burgue da Casa (1)</li>
-          <li>Batata Frita (1)</li>
-          <li>Suco de fruta (2)</li>
-        </ul>
-      </td>
-      
+      <ProdutosCell produtos={produtos} />
+
       {/* Status do pedido */}
-      <StateCell statusPedido={PedidoStatus[statusPedido]} />
+      <StatusCell statusPedido={PedidoStatus[statusPedido]} />
     </tr>
   );
 }

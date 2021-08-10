@@ -46,7 +46,7 @@ function ClientCell({ telefone, adress, nome }: ClientCellProps) {
             onCopy={handleCopyTelefone}
           >
             <MdPhone
-              size={21}
+              size={26}
               title="Telefone para contato"
               className="mr-1 cursor-pointer hover:text-indigo-300"
             />
@@ -56,7 +56,7 @@ function ClientCell({ telefone, adress, nome }: ClientCellProps) {
             onCopy={handleCopyAdress}
           >
             <MdLocationOn
-              size={21}
+              size={26}
               title="Endereço do cliente"
               className="cursor-pointer hover:text-indigo-300"
             />
