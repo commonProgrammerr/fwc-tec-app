@@ -2,15 +2,15 @@ import React from "react"
 import TabelaDePedidos from "../components/tabela-pedidos"
 
 import { IoIosListBox } from 'react-icons/io'
-import { MdError } from 'react-icons/md'
+import { PedidoItemProps } from "../components/pedido-item";
 
 import Layout from "../components/layout"
-import { PedidoItemProps } from "../components/pedido-item";
-import { useAsync } from "react-use";
+import Loader from "../components/loader"
+import { MdError } from "react-icons/md";
+import { api } from "../services/api";
 
 
 function PedidoPage() {
-  const pedidos = useAsync(getPedidos)
 
   const warnsClassNames = `
   flex
@@ -34,16 +34,14 @@ function PedidoPage() {
       >
         <IoIosListBox className="mr-2 mt-1" /> Pedidos
       </h1>
-      {
-        pedidos.loading
-          ? <p className={warnsClassNames} > Carregando...</p>
-          : pedidos.error
-            ? <p className={warnsClassNames} >
-                Algo deu errado <MdError className="ml-2 mt-1" />
-              </p >
-            : <TabelaDePedidos className="text-sm mt-10" itens={pedidos.value} />
-      }
 
+      <Loader
+        asyncFn={getPedidos}
+        loading={<p className={warnsClassNames}>Carregando...</p>}
+        error={() => <p className={warnsClassNames}> Algo deu errado <MdError className="ml-2 mt-1" /> </p >}
+      >
+        {pedidos => <TabelaDePedidos itens={pedidos!} />}
+      </Loader>
 
     </Layout>
   );
@@ -52,48 +50,7 @@ function PedidoPage() {
 
 async function getPedidos(): Promise<PedidoItemProps[]> {
   // pseudo informações para teste
-  const pedidos: PedidoItemProps[] = [
-    {
-      clientInfos: {
-        nome: 'Iago Thales Ferreira',
-        adress: 'Rua Palmeirais, 479, Campo Grande - 79034-500',
-        telefone: '(67) 98197-5298'
-      },
-      horaDoPedido: '12:13',
-      numeroPedido: 61,
-      statusPedido: 'AGUARDADANDO'
-    },
-    {
-      clientInfos: {
-        nome: 'Alessandra Maria Nina Viana',
-        adress: 'Rua Alberto Stein, s/n, 908, Blumenau - 89036-900',
-        telefone: '(47) 98137-1127'
-      },
-      horaDoPedido: '12:13',
-      numeroPedido: 67,
-      statusPedido: 'ENTREGUE'
-    },
-    {
-      clientInfos: {
-        nome: 'Vicente Daniel Carlos Eduardo Aparício',
-        adress: 'Rua C, 151, Porto Alegre - 91150-135',
-        telefone: '(51) 98593-0667'
-      },
-      horaDoPedido: '12:13',
-      numeroPedido: 96,
-      statusPedido: 'EN_ANDAMENTO'
-    },
-    {
-      clientInfos: {
-        nome: 'Renan Cláudio Mendes',
-        adress: 'Rua Paratinga, 720, Natal - 59120-140',
-        telefone: '(84) 98185-0855'
-      },
-      horaDoPedido: '12:13',
-      numeroPedido: 50,
-      statusPedido: 'PRONTO'
-    }
-  ]
+  const pedidos = (await api.get<PedidoItemProps[]>('/pedido')).data
 
   return new Promise<PedidoItemProps[]>((resolve, reject) => {
     const delay = Math.round(90 + Math.random() * 1200)

@@ -1,10 +1,8 @@
-// import { useState } from 'react';
-
 import '../../styles/components/pedido-item.css'
 import ClientCell from './client-cell';
-import StateCell from './state-cell';
+import StateCell from './status-cell';
 
-export enum PedidoStates {
+export enum PedidoStatus {
   AGUARDADANDO,
   EN_ANDAMENTO,
   PRONTO,
@@ -18,7 +16,7 @@ export interface PedidoItemProps {
     telefone: string
   }
   numeroPedido: number
-  statusPedido: keyof typeof PedidoStates
+  statusPedido: keyof typeof PedidoStatus
   horaDoPedido: string
   produtos?: Array<{
     nome: string
@@ -35,11 +33,6 @@ function PedidoItem({
   produtos,
   className
 }: PedidoItemProps) {
-
-  // const [isOpen, setIsOpen] = useState(true)
-
-
-
 
   return (
     <tr className={`w-full tabela-pedidos-itens ${className}`} >
@@ -67,15 +60,15 @@ function PedidoItem({
 
       {/*  Items pedidos */}
       <td className="text-gray-600 tabela-pedidos-itens-col">
-        <div>
-          <small className="mr-2">1. X-Burgue da Casa (1)</small>
-          <small className="mr-2">2. Batata Frita (1)</small>
-          <small>3. Suco de fruta (2)</small>
-        </div>
+        <ul className="px-3 pb-1">
+          <li>X-Burgue da Casa (1)</li>
+          <li>Batata Frita (1)</li>
+          <li>Suco de fruta (2)</li>
+        </ul>
       </td>
       
       {/* Status do pedido */}
-      <StateCell statusPedido={PedidoStates[statusPedido]} />
+      <StateCell statusPedido={PedidoStatus[statusPedido]} />
     </tr>
   );
 }

@@ -35,31 +35,34 @@ function ClientCell({ telefone, adress, nome }: ClientCellProps) {
 
   return (
     <td className="text-indigo-200 tabela-pedidos-name-col">
-      <span className="flex-1 flex items-center">
-        <span className="text-gray-700 px-3">
+      <div className="flex">
+
+        <span className="flex-1 text-base text-gray-700 px-3">
           {nome}
         </span>
-        <CopyToClipboard
-          text={telefone}
-          onCopy={handleCopyTelefone}
-        >
-          <MdPhone
-            size={21}
-            title="Telefone para contato"
-            className="mr-1 cursor-pointer hover:text-indigo-300"
-          />
-        </CopyToClipboard>
-        <CopyToClipboard
-          text={adress}
-          onCopy={handleCopyAdress}
-        >
-          <MdLocationOn
-            size={21}
-            title="Endereço do cliente"
-            className="cursor-pointer hover:text-indigo-300"
-          />
-        </CopyToClipboard>
-      </span>
+        <div className="flex items-center">
+          <CopyToClipboard
+            text={telefone}
+            onCopy={handleCopyTelefone}
+          >
+            <MdPhone
+              size={21}
+              title="Telefone para contato"
+              className="mr-1 cursor-pointer hover:text-indigo-300"
+            />
+          </CopyToClipboard>
+          <CopyToClipboard
+            text={adress}
+            onCopy={handleCopyAdress}
+          >
+            <MdLocationOn
+              size={21}
+              title="Endereço do cliente"
+              className="cursor-pointer hover:text-indigo-300"
+            />
+          </CopyToClipboard>
+        </div>
+      </div>
     </td>
   );
 }

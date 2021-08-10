@@ -1,5 +1,6 @@
 .tabela-pedidos-name-col {
-  width: 25%;
+  width: 35%;
+  height: 100%;
   min-width: 16rem;
 }
 
@@ -12,12 +13,22 @@
   width: 12%;
   min-width: 8rem;
 }
+td.tabela-pedidos-status-col {
+  /* display: flex; */
+  width: 12%;
+  min-width: 8rem;
+}
 
 .tabela-pedidos-time-col {
   width: 6%;
   min-width: 3rem;
 }
 
+.tabela-pedidos-itens-col ul {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr;
+}
 .tabela-pedidos-itens-col {
   width: 1fr;
   padding: 0 0.3rem;

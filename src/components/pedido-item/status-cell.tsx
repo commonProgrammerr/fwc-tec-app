@@ -1,8 +1,8 @@
 import React from 'react';
-import { PedidoStates } from "./index";
+import { PedidoStatus } from "./index";
 
 interface StateTagProps {
-  statusPedido: PedidoStates
+  statusPedido: PedidoStatus
 }
 
 function StateCell({ statusPedido }: StateTagProps) {
@@ -15,41 +15,42 @@ function StateCell({ statusPedido }: StateTagProps) {
     items-center
     px-2 py-1 
     min-w-32
+    w-full
+    h-full
     rounded
-    tabela-pedidos-status-col
   `
 
   switch (statusPedido) {
-    case PedidoStates.PRONTO:
+    case PedidoStatus.PRONTO:
       return (
-        <td>
+        <td className="tabela-pedidos-status-col">
           <span className={'bg-yellow-400 ' + defaulClasses}>
             Pronto
           </span>
         </td>
       )
 
-    case PedidoStates.AGUARDADANDO:
+    case PedidoStatus.AGUARDADANDO:
       return (
-        <td>
+        <td className="tabela-pedidos-status-col">
           <span className={'bg-gray-500 ' + defaulClasses}>
             Aguardando
           </span>
         </td>
       )
 
-    case PedidoStates.ENTREGUE:
+    case PedidoStatus.ENTREGUE:
       return (
-        <td>
+        <td className="tabela-pedidos-status-col">
           <span className={'bg-green-400 ' + defaulClasses}>
             Entregue
           </span>
         </td>
       )
 
-    case PedidoStates.EN_ANDAMENTO:
+    case PedidoStatus.EN_ANDAMENTO:
       return (
-        <td>
+        <td className="tabela-pedidos-status-col">
           <span className={'bg-red-500 ' + defaulClasses}>
             Em andamento
           </span>

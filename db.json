@@ -1,0 +1,44 @@
+{
+  "pedido": [
+    {
+      "clientInfos": {
+        "nome": "Iago Thales Ferreira",
+        "adress": "Rua Palmeirais, 479, Campo Grande - 79034-500",
+        "telefone": "(67) 98197-5298"
+      },
+      "horaDoPedido": "12:13",
+      "numeroPedido": 61,
+      "statusPedido": "AGUARDADANDO"
+    },
+    {
+      "clientInfos": {
+        "nome": "Alessandra Maria Nina Viana",
+        "adress": "Rua Alberto Stein, s/n, 908, Blumenau - 89036-900",
+        "telefone": "(47) 98137-1127"
+      },
+      "horaDoPedido": "12:13",
+      "numeroPedido": 67,
+      "statusPedido": "ENTREGUE"
+    },
+    {
+      "clientInfos": {
+        "nome": "Vicente Daniel Carlos Eduardo Aparício",
+        "adress": "Rua C, 151, Porto Alegre - 91150-135",
+        "telefone": "(51) 98593-0667"
+      },
+      "horaDoPedido": "12:13",
+      "numeroPedido": 96,
+      "statusPedido": "EN_ANDAMENTO"
+    },
+    {
+      "clientInfos": {
+        "nome": "Renan Cláudio Mendes",
+        "adress": "Rua Paratinga, 720, Natal - 59120-140",
+        "telefone": "(84) 98185-0855"
+      },
+      "horaDoPedido": "12:13",
+      "numeroPedido": 50,
+      "statusPedido": "PRONTO"
+    }
+  ]
+}

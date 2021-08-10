@@ -1,17 +1,44 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
+import { useAsyncRetry } from 'react-use';
+import { FunctionReturningPromise, PromiseType } from 'react-use/lib/misc/types';
 
-interface LoaderProps {
-  assyncFn: () => Promise<any>
-  children: ReactNode
-  loading: ReactNode
-  error: ReactNode
+interface LoaderProps<T extends FunctionReturningPromise> {
+  asyncFn: T
+  loading?: ReactNode
+  error?: (error?: Error) => ReactNode
+  children: ((state?: PromiseType<ReturnType<T>>) => ReactNode)
 }
 
-function Loader({ children }: LoaderProps) {
+function Loader<T extends FunctionReturningPromise>({
+  asyncFn,
+  children,
+  loading,
+  error
+}: LoaderProps<T>) {
+  const asyncState = useAsyncRetry(asyncFn)
   return (
     <>
-      <h1>Loader</h1>
-      {children}
+      {
+        asyncState.loading
+          ? <>{loading}</>
+          : asyncState.error
+            ? <div className="flex flex-col">
+              {error?.(asyncState.error)}
+              <button
+                onClick={asyncState.retry}
+                className="
+                rounded 
+                py-1 px-2
+                bg-indigo-300 
+                hover:bg-indigo-500 
+                self-center 
+                text-white"
+              >
+                Tentar novamente
+              </button>
+            </div>
+            : <>{children(asyncState.value)}</>
+      }
     </>
   );
 }

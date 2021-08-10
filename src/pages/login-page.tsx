@@ -15,8 +15,8 @@ function LoginPage() {
           <span className="text-gray-600 text-2xl font-semibold">Login</span>
         </div>
 
-        <Input label="email" />
-        <Input label="password" type="password" />
+        <Input label="Email" />
+        <Input label="Password" type="password" />
         <section className="flex items-center">
           <input className="text-gray-700 mr-2 border" type="checkbox" />
           <span className="text-gray-600 text-xs font-medium">Lembre de mim</span>

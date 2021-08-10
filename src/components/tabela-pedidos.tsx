@@ -30,7 +30,7 @@ function TabelaDePedidos({ className, itens }: TabelaDePedidosProps) {
           </tr>
         </thead>
         <tbody ref={scrollRef} className={`overflow-y-scroll rounded w-full p-2 tabela-body ${scrollPosition > 2 && 'table-iner-shadow' }`} >
-          {itens?.map(item => <PedidoItem {...item}/>)}
+          {itens?.map((item, index) => <PedidoItem className={`${index % 2 !== 0 && 'bg-blue-50' }`} {...item}/>)}
         </tbody>
       </table>
     </>
