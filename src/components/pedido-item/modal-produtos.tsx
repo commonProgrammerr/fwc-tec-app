@@ -92,7 +92,7 @@ function ModalProdutos({ isOpen, closeModal }: ModalProdutosProps) {
                   )
                   <div className="flex-1 border-b border-gray-600 border-dotted" />
                   R$ {
-                    (produto.preço || 110)
+                    (produto.preço || 0)
                       .toFixed(2)
                       .replace('.', ',')
                   }
