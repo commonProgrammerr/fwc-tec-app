@@ -17,7 +17,7 @@ function TabelaDePedidos({ className, itens }: TabelaDePedidosProps) {
 
   return (
     <div id="main">
-      <table className={"flex flex-col w-full " + className}>
+      <table className={"flex overflow-scroll flex-col w-full " + className}>
         <thead className="font-bold p-2 w-full text-gray-600" >
           <tr className="bg-white tabela-row" >
             <th className="tabela-pedidos-time-col" >

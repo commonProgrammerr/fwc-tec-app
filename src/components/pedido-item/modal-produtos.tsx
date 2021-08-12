@@ -93,8 +93,10 @@ function ModalProdutos({ isOpen, closeModal }: ModalProdutosProps) {
                   <div className="flex-1 border-b border-gray-600 border-dotted" />
                   R$ {
                     (produto.preço || 0)
-                      .toFixed(2)
-                      .replace('.', ',')
+                      .toLocaleString('br', {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                      })
                   }
                 </li>
               ))
@@ -105,10 +107,12 @@ function ModalProdutos({ isOpen, closeModal }: ModalProdutosProps) {
               {' R$'}
               <span className="text-3xl font-medium">
                 {
-                  (produtos?.map(produto => produto.preço) || [])
-                    .reduce((prev, curr) => prev ? prev + curr : prev, 0)
-                    .toFixed(2)
-                    .replace('.', ',')
+                  produtos?.map(produto => produto.preço)
+                    .reduce((prev, curr) => prev + curr || 0, 0)
+                    .toLocaleString('br', {
+                      maximumFractionDigits: 2,
+                      minimumFractionDigits: 2
+                    })
                 }
               </span>
             </span>

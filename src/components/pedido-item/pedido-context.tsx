@@ -10,7 +10,7 @@ interface PedidoContextProps {
   numero: number
   status: keyof typeof PedidoStatus
   horaDoPedido: string
-  produtos: Array<{
+  produtos?: Array<{
     nome: string
     quantidade: number
     preço: number
@@ -22,10 +22,10 @@ export type ContextData = Omit<PedidoContextProps, 'children'>
 
 const pedidoContext = createContext<ContextData | null>(null)
 
-export function PedidoProvider({children, ...props}: PedidoContextProps) {
+export function PedidoProvider({ children, produtos = [], ...props }: PedidoContextProps) {
   return (
     <pedidoContext.Provider
-      value={props}
+      value={{ produtos, ...props }}
     >
       {children}
     </pedidoContext.Provider>

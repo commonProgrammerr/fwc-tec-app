@@ -12,13 +12,13 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0.75em;
-  height: 0.75em;
+  width: 0.5em;
+  height: 0.5em;
   visibility: hidden;
 }
 ::-webkit-scrollbar:hover {
-  width: 0.75em;
-  height: 0.75em;
+  width: 0.5em;
+  height: 0.5em;
   visibility: visible;
 }
 
@@ -34,9 +34,10 @@ body {
 ::-webkit-scrollbar-thumb {
   background: none;
   border-radius: 100vh;
+  background: #909eb09b;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #565f69;
+  background: #909eb0af;
 }

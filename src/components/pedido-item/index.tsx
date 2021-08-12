@@ -34,7 +34,7 @@ function PedidoItem({ className, ...props }: PedidoItemProps) {
         {/* Numero do pedido */}
         <td className="text-center tabela-pedidos-num-col">
           <span className="w-full text-center">
-            {props.numero}
+            {props.numero.toString().padStart(4, '0')}
           </span>
         </td>
 

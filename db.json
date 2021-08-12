@@ -14,22 +14,22 @@
         {
           "nome": "X-burguer",
           "quantidade": 1,
-          "preço": 2.66
+          "preço": 24.666
         },
         {
           "nome": "Sopa",
           "quantidade": 1,
-          "preço": 2.66
+          "preço": 12.66
         },
         {
           "nome": "A moda da casa",
           "quantidade": 1,
-          "preço": 2.66
+          "preço": 34.62
         },
         {
           "nome": "Salada finess",
           "quantidade": 1,
-          "preço": 2.66
+          "preço": 28.99
         }
       ]
     },
@@ -47,17 +47,17 @@
         {
           "nome": "X-burguer",
           "quantidade": 1,
-          "preço": 2.66
+          "preço": 24.666
         },
         {
           "nome": "Fanta uva",
           "quantidade": 1,
-          "preço": 2.66
+          "preço": 7.29
         },
         {
           "nome": "Batata frita",
           "quantidade": 1,
-          "preço": 2.66
+          "preço": 12.90
         }
       ]
     },
@@ -84,17 +84,69 @@
       "status": "PRONTO",
       "produtos": [
         {
+          "nome": "Coca Cola",
+          "quantidade": 3,
+          "preço": 6.99
+        },
+        {
           "nome": "Cachorro quente",
           "quantidade": 1,
-          "preço": 2.66
+          "preço": 8.99
         },
         {
           "nome": "File de peixe",
-          "quantidade": 2
+          "quantidade": 2,
+          "preço": 28.90
         },
         {
-          "nome": "Coca Cola",
-          "quantidade": 3
+          "nome": "Cachorro quente",
+          "quantidade": 1,
+          "preço": 8.99
+        },
+        {
+          "nome": "File de peixe",
+          "quantidade": 2,
+          "preço": 28.90
+        },
+        {
+          "nome": "Cachorro quente",
+          "quantidade": 1,
+          "preço": 8.99
+        },
+        {
+          "nome": "File de peixe",
+          "quantidade": 2,
+          "preço": 28.90
+        },
+        {
+          "nome": "Cachorro quente",
+          "quantidade": 1,
+          "preço": 8.99
+        },
+        {
+          "nome": "File de peixe",
+          "quantidade": 2,
+          "preço": 28.90
+        },
+        {
+          "nome": "Cachorro quente",
+          "quantidade": 1,
+          "preço": 8.99
+        },
+        {
+          "nome": "File de peixe",
+          "quantidade": 2,
+          "preço": 28.90
+        },
+        {
+          "nome": "Cachorro quente",
+          "quantidade": 1,
+          "preço": 8.99
+        },
+        {
+          "nome": "File de peixe",
+          "quantidade": 2,
+          "preço": 28.90
         }
       ]
     }
