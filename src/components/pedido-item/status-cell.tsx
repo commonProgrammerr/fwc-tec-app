@@ -1,11 +1,10 @@
 import React from 'react';
+import { RiAlertFill } from 'react-icons/ri';
 import { PedidoStatus } from "./index";
+import { usePedidoContext } from './pedido-context';
 
-interface StateTagProps {
-  statusPedido: PedidoStatus
-}
 
-function StateCell({ statusPedido }: StateTagProps) {
+function StateCell() {
   const defaulClasses = `
     flex 
     flex-1
@@ -19,8 +18,9 @@ function StateCell({ statusPedido }: StateTagProps) {
     h-full
     rounded
   `
+  const { status } = usePedidoContext()
 
-  switch (statusPedido) {
+  switch (PedidoStatus[status]) {
     case PedidoStatus.PRONTO:
       return (
         <td className="tabela-pedidos-status-col">
@@ -58,7 +58,13 @@ function StateCell({ statusPedido }: StateTagProps) {
       )
 
     default:
-      return null
+      return (
+        <td className="tabela-pedidos-status-col">
+          <span className={defaulClasses + 'bg-pink-800 text-lg'}>
+            Error <RiAlertFill size={20} />
+          </span>
+        </td>
+      )
   }
 }
 

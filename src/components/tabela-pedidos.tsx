@@ -16,7 +16,7 @@ function TabelaDePedidos({ className, itens }: TabelaDePedidosProps) {
   const { y: scrollPosition } = useScroll(scrollRef);
 
   return (
-    <>
+    <div id="main">
       <table className={"flex flex-col w-full " + className}>
         <thead className="font-bold p-2 w-full text-gray-600" >
           <tr className="bg-white tabela-row" >
@@ -29,11 +29,21 @@ function TabelaDePedidos({ className, itens }: TabelaDePedidosProps) {
             <th className="tabela-pedidos-status-col">Status</th>
           </tr>
         </thead>
-        <tbody ref={scrollRef} className={`overflow-y-scroll rounded w-full p-2 tabela-body ${scrollPosition > 2 && 'table-iner-shadow' }`} >
-          {itens?.map((item, index) => <PedidoItem className={`${index % 2 !== 0 && 'bg-gray-100' }`} {...item}/>)}
+        <tbody
+          ref={scrollRef}
+          className={`
+            overflow-y-scroll 
+            rounded 
+            w-full p-2 
+            ${scrollPosition > 2 && 'table-iner-shadow'}`}
+        >
+          {
+            itens?.sort((prev, curr) => curr.numero - prev.numero)
+              .map((item, index) => <PedidoItem key={`ti-${item.numero}`} className={`${index % 2 !== 0 && 'bg-gray-100'}`} {...item} />)
+          }
         </tbody>
       </table>
-    </>
+    </div>
   );
 }
 

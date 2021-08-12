@@ -4,28 +4,32 @@
       "id": 1,
       "clientInfos": {
         "nome": "Iago Thales Ferreira",
-        "adress": "Rua Palmeirais, 479, Campo Grande - 79034-500",
+        "endereço": "Rua Palmeirais, 479, Campo Grande - 79034-500",
         "telefone": "(67) 98197-5298"
       },
       "horaDoPedido": "12:13",
-      "numeroPedido": 61,
-      "statusPedido": "EN_ANDAMENTO",
+      "numero": 61,
+      "status": "EN_ANDAMENTO",
       "produtos": [
         {
           "nome": "X-burguer",
-          "quantidade": 1
+          "quantidade": 1,
+          "preço": 2.66
         },
         {
           "nome": "Sopa",
-          "quantidade": 1
+          "quantidade": 1,
+          "preço": 2.66
         },
         {
           "nome": "A moda da casa",
-          "quantidade": 1
+          "quantidade": 1,
+          "preço": 2.66
         },
         {
           "nome": "Salada finess",
-          "quantidade": 1
+          "quantidade": 1,
+          "preço": 2.66
         }
       ]
     },
@@ -33,24 +37,27 @@
       "id": 2,
       "clientInfos": {
         "nome": "Alessandra Maria Nina Viana",
-        "adress": "Rua Alberto Stein, s/n, 908, Blumenau - 89036-900",
+        "endereço": "Rua Alberto Stein, s/n, 908, Blumenau - 89036-900",
         "telefone": "(47) 98137-1127"
       },
       "horaDoPedido": "12:13",
-      "numeroPedido": 67,
-      "statusPedido": "ENTREGUE",
+      "numero": 67,
+      "status": "ENTREGUE",
       "produtos": [
         {
           "nome": "X-burguer",
-          "quantidade": 1
+          "quantidade": 1,
+          "preço": 2.66
         },
         {
           "nome": "Fanta uva",
-          "quantidade": 1
+          "quantidade": 1,
+          "preço": 2.66
         },
         {
           "nome": "Batata frita",
-          "quantidade": 1
+          "quantidade": 1,
+          "preço": 2.66
         }
       ]
     },
@@ -58,27 +65,28 @@
       "id": 3,
       "clientInfos": {
         "nome": "Vicente Daniel Carlos Eduardo Aparício",
-        "adress": "Rua C, 151, Porto Alegre - 91150-135",
+        "endereço": "Rua C, 151, Porto Alegre - 91150-135",
         "telefone": "(51) 98593-0667"
       },
       "horaDoPedido": "12:13",
-      "numeroPedido": 96,
-      "statusPedido": "AGUARDADANDO"
+      "numero": 96,
+      "status": "AGUARDADANDO"
     },
     {
       "id": 4,
       "clientInfos": {
         "nome": "Renan Cláudio Mendes",
-        "adress": "Rua Paratinga, 720, Natal - 59120-140",
+        "endereço": "Rua Paratinga, 720, Natal - 59120-140",
         "telefone": "(84) 98185-0855"
       },
       "horaDoPedido": "12:13",
-      "numeroPedido": 50,
-      "statusPedido": "PRONTO",
+      "numero": 50,
+      "status": "PRONTO",
       "produtos": [
         {
           "nome": "Cachorro quente",
-          "quantidade": 1
+          "quantidade": 1,
+          "preço": 2.66
         },
         {
           "nome": "File de peixe",

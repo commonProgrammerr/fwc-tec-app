@@ -2,17 +2,12 @@ import React from 'react';
 import { MdLocationOn, MdPhone } from 'react-icons/md'
 import { useToasts } from 'react-toast-notifications';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { usePedidoContext } from './pedido-context';
 
-interface ClientCellProps {
-  nome: string
-  adress: string
-  telefone: string
-}
-
-function ClientCell({ telefone, adress, nome }: ClientCellProps) {
+function ClientCell() {
 
   const { addToast } = useToasts()
-
+  const { clientInfos: { nome, endereço, telefone } } = usePedidoContext()
   const handleCopyTelefone = () => {
     addToast(
       'Telefone copiado!',
@@ -52,7 +47,7 @@ function ClientCell({ telefone, adress, nome }: ClientCellProps) {
             />
           </CopyToClipboard>
           <CopyToClipboard
-            text={adress}
+            text={endereço}
             onCopy={handleCopyAdress}
           >
             <MdLocationOn

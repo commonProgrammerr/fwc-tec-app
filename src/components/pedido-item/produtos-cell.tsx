@@ -1,58 +1,55 @@
-
-interface ProdutosCellProps {
-  produtos?: Array<{
-    nome: string
-    quantidade: number
-  }>
-}
+import { useState } from "react"
+import ModalProdutos from "./modal-produtos"
+import { usePedidoContext } from "./pedido-context"
 
 
 
-function ProdutosCell({ produtos }: ProdutosCellProps) {
+
+function ProdutosCell() {
   const cellClassNames = `
   text-gray-600 
   tabela-pedidos-itens-col
+  rounded-md
   hover:bg-indigo-100
   hover:text-black
-  rounded-md
   cursor-pointer
   `
-  const listClassNames = "flex min-w-60 gap-1 text-xs"
+  const listClassNames = "flex min-w-60 gap-1 text-xs overflow-visible"
 
-  if (produtos && produtos.length > 3) {
-    return (
-      <td className={cellClassNames}>
-        <ul className={listClassNames}>
-          {
-            produtos
-              .slice(0, 3)
-              ?.map(produto => (
-                <li>{produto.nome} ({produto.quantidade}){'; '}</li>
-              ))
-          }
-          <span className="leading-3 w-min text-2xl">...</span>
-        </ul>
-      </td>
-    )
-  } else {
-    return (
-      <td className={cellClassNames}>
-        <ul className={listClassNames}>
-          {
-            produtos
-              ?.map(produto => (
-                <li>
+
+  const [showModal, setShowModal] = useState(false)
+
+  const handleOpenModal = () => setShowModal(() => {
+      showModal && setShowModal(false)
+      return true
+    })
+
+  const handleCloseModal = () => setShowModal(false)
+
+  const { produtos } = usePedidoContext()
+  const size = produtos?.length || 0
+
+  return (
+    <td className={cellClassNames} title="Detalhes" onClick={handleOpenModal}>
+      <ul className={listClassNames}>
+        {
+          produtos
+            ?.slice(0, 4)
+            .map((produto, index) => {
+              const sufixo = (index < size - 1) ? ('; ') : (size > 4 && '...')
+              return (
+                <li key={`${produto.nome}-${index}`}>
                   {produto.nome}
                   ({produto.quantidade})
-                  {'; '}
+                  {sufixo}
                 </li>
-              ))
-          }
-        </ul>
-      </td>
-    );
-  }
-
+              )
+            })
+        }
+      </ul>
+      <ModalProdutos isOpen={showModal} closeModal={handleCloseModal} />
+    </td>
+  )
 }
 
 export default ProdutosCell;

@@ -14,8 +14,14 @@ body {
 ::-webkit-scrollbar {
   width: 0.75em;
   height: 0.75em;
-  
+  visibility: hidden;
 }
+::-webkit-scrollbar:hover {
+  width: 0.75em;
+  height: 0.75em;
+  visibility: visible;
+}
+
 
 /* Track */
 ::-webkit-scrollbar-track {
@@ -26,9 +32,8 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #909eb0;
+  background: none;
   border-radius: 100vh;
-  border: 2px solid #edf2f7;
 }
 
 /* Handle on hover */
